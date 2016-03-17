@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="jquery.min.js"></script>
+    <script src="typed.js"></script>
+    <style type="text/css">
+    .typed-cursor {
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    </style>
+    <script charset="UTF-8">
+
+    //alert("输入汉字");
+    $(function() {
+        $(".msg").typed({
+            strings: ["First sentence.", "第二行"],
+            typeSpeed: 30,
+            backDelay: 1000,
+            callback: function(){
+                //$('.msg').html("");
+                $('.typed-cursor').remove();
+                $('.postmsg').typed({
+                    strings: ["是空的", "现在不是是空的了"],
+                    typeSpeed: 30,
+                    backDelay: 1000,
+                });
+
+        }
+            //, loop: true
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <span class="premsg"></span><span class="msg"></span><span class="postmsg"></span>
+</body>
+
+</html>
