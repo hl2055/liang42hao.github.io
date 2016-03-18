@@ -238,6 +238,9 @@
    *  \n\
    */\n\
    \n\
+  #msg {    \n\
+      font: normal bold 42px/50px Andale Mono, monospace;\n\
+  }    \n\
   .typed-cursor{\n\
       opacity: 1;\n\
       -webkit-animation: blink 0.7s infinite;\n\
