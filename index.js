@@ -124,7 +124,7 @@
   /* Makin it meaningful. */\n\
   \n\
   #heart i::before {\n\
-    content: 'I Love You';\n\
+    content: 'Love You';\n\
     position: absolute;\n\
     z-index: 9;\n\
     width: 100%;\n\
@@ -241,7 +241,7 @@
   #msg-p {    \n\
       font: normal bold 21px/25px Andale Mono, monospace;\n\
       position: fixed;\n\
-      top: calc(50% + 200px); left: calc(25% - 200px);\n\
+      top: calc(50% + 200px);\n\
       word-wrap: normal;\n\
   }    \n\
   .typed-cursor{\n\
@@ -304,11 +304,17 @@
                 return writeStyles(message, index, interval);
             }), interval);
         } else {
-            return $('#msg').typed({
-                strings: ["I know we do not have much in common,", "... yet ^1000", "I believe love will overcome all obstacles. ^1500", "See you later!"],
-                typeSpeed: 30,
-                backDelay: 500
-            });
+            setTimeout(function() {
+                $('pre').fadeTo(2000, 0, function() {
+                    $('#heart,#echo,#msg-p').css('left', 'calc(50% - 150px)');
+                    $('#msg').typed({
+                        strings: ["I know we do not have much in common,", "... yet ^1000", "I believe love will overcome all obstacles. ^1500", "See you later! ^5000"],
+                        typeSpeed: 30,
+                        backDelay: 500,
+                        callback: function() { window.close(); }
+                    });
+                });
+            }, 2000)
         }
     };
 
