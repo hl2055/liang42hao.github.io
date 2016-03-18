@@ -1,17 +1,17 @@
 (function() {
-    var openComment, styles, time, writeStyleChar, writeStyles;
+  var openComment, styles, time, writeStyleChar, writeStyles;
 
-    styles = "/* \n\
+  styles = "  /* \n\
    * \"Coding Howard\" v1.3.1.4\n\
    * Robot rights protected under BOT License\n\
-   * Authored by http://liang42hao.github.io\n\
+   * Authored by http:////liang42hao.github.io\n\
    */\n\
    \n\
   body {\n\
     background-color: #1a1c24; color: #fff;\n\
     font-size: 13px; line-height: 1.4;\n\
     -webkit-font-smoothing: subpixel-antialiased;\n\
-}\n\
+  }\n\
   \n\
   /* ...                  \n\
    *\n\
@@ -41,14 +41,14 @@
     box-sizing: border-box;\n\
     border-radius: 3px;\n\
     box-shadow: 0px 4px 0px 2px rgba(0,0,0,0.1);\n\
-}\n\
+  }\n\
   \n\
   \n\
   /* \n\
    * Syntax highlighting \n\
    * Colors based on Base16 Ocean Dark\n\
    */\n\
-   \n\
+  \n\
   pre em:not(.comment) { font-style: normal; }\n\
   \n\
   .comment       { color: #707e84; }\n\
@@ -61,7 +61,7 @@
   /* \n\
    * Let's build my little pink heart.\n\
    */ \n\
-   \n\
+  \n\
   \n\
   /* First, we'll move this s*** over */\n\
   \n\
@@ -77,7 +77,7 @@
     text-align: center;\n\
     -webkit-transform: scale(0.95);\n\
             transform: scale(0.95);\n\
-        }\n\
+  }\n\
   \n\
   #heart { z-index: 8; }\n\
   #echo  { z-index: 7; }\n\
@@ -93,11 +93,11 @@
               transform: rotate(-45deg);\n\
       -webkit-transform-origin: 0 100%;\n\
               transform-origin: 0 100%;\n\
-          }\n\
+  }\n\
   \n\
   #heart::before, #echo::before {\n\
     left: 150px;\n\
-}\n\
+  }\n\
   \n\
   #heart::after, #echo::after {\n\
     left: 0;\n\
@@ -105,7 +105,7 @@
             transform: rotate(45deg);\n\
     -webkit-transform-origin: 100% 100%;\n\
             transform-origin: 100% 100%;\n\
-        }\n\
+  }\n\
   \n\
   \n\
   /* It needs some depth  */\n\
@@ -134,13 +134,13 @@
     font-weight: 100;\n\
     font-size: 30px;\n\
     text-shadow: -1px -1px 0px rgba(0,0,0,0.2);\n\
-}\n\
+  }\n\
   \n\
   \n\
   /* \n\
    * Hearts gotta beat. \n\
    */\n\
-   \n\
+  \n\
   @-webkit-keyframes heartbeat {\n\
     0%, 100% { \n\
       -webkit-transform: scale(0.95); \n\
@@ -150,12 +150,12 @@
       -webkit-transform: scale(1.00); \n\
               transform: scale(1.00); \n\
     }\n\
-}\n\
+  }\n\
   \n\
   @keyframes heartbeat {\n\
     0%, 100% { transform: scale(0.95); }\n\
     50%      { transform: scale(1.00); }\n\
-}\n\
+  }\n\
   \n\
   @-webkit-keyframes echo {\n\
     0%   { \n\
@@ -168,7 +168,7 @@
       -webkit-transform: scale(1.4);\n\
               transform: scale(1.4);\n\
     }\n\
-}\n\
+  }\n\
   \n\
   @keyframes echo {\n\
     0%   { \n\
@@ -179,7 +179,7 @@
       opacity: 0;\n\
       transform: scale(1.4);\n\
     }\n\
-}\n\
+  }\n\
   \n\
   \n\
   /* \n\
@@ -199,16 +199,16 @@
             animation-iteration-count: infinite;\n\
     -webkit-animation-play-state: paused;\n\
             animation-play-state: paused;\n\
-        }\n\
+  }\n\
   \n\
   #heart { \n\
     -webkit-animation-name: heartbeat; \n\
             animation-name: heartbeat; \n\
-        }\n\
+  }\n\
   #echo { \n\
     -webkit-animation-name: echo; \n\
             animation-name: echo; \n\
-        }\n\
+  }\n\
   \n\
   \n\
   /* \n\
@@ -224,104 +224,109 @@
     -webkit-animation-play-state: running;\n\
             animation-play-state: running;\n\
     \n\
-    /* \n\
+  /* \n\
    * ...beat!        \n\
    */\n\
     \n\
-}\n\
+  }\n\
   \n\
-  /* \n\
+  /*\n\
    *\n\
    * This pinky beating heart has got something to say...\n\
    *\n\
    * I'm going to let it type.\n\
-   *  \n\
+   *\n\
    */\n\
-   \n\
+  \n\
   #msg-p {    \n\
       font: normal bold 21px/25px Andale Mono, monospace;\n\
       position: fixed;\n\
       top: calc(50% + 200px);\n\
       word-wrap: normal;\n\
-  }    \n\
+  }\n\
+  \n\
   .typed-cursor{\n\
       opacity: 1;\n\
       -webkit-animation: blink 0.7s infinite;\n\
       -moz-animation: blink 0.7s infinite;\n\
       animation: blink 0.7s infinite;\n\
   }\n\
+  \n\
   @keyframes blink{\n\
       0% { opacity:1; }\n\
       50% { opacity:0; }\n\
       100% { opacity:1; }\n\
   }\n\
+  \n\
   @-webkit-keyframes blink{\n\
       0% { opacity:1; }\n\
       50% { opacity:0; }\n\
       100% { opacity:1; }\n\
   }\n\
+  \n\
   @-moz-keyframes blink{\n\
       0% { opacity:1; }\n\
       50% { opacity:0; }\n\
       100% { opacity:1; }\n\
   }\n\
   \n\
-  /* \n\
+  //*\n\
    *\n\
-   * Let's look what's it gonna say!    \n\
-   *  \n\
+   * Let's look what's it gonna say!\n\
+   *\n\
    */";
 
-    openComment = false;
+  openComment = false;
 
-    writeStyleChar = function(which) {
-        if (which === '/' && openComment === false) {
-            openComment = true;
-            styles = $('#style-text').html() + which;
-        } else if (which === '/' && openComment === true) {
-            openComment = false;
-            styles = $('#style-text').html().replace(/(\/[^\/]*\*)$/, '<em class="comment">$1/</em>');
-        } else if (which === ':') {
-            styles = $('#style-text').html().replace(/([a-zA-Z- ^\n]*)$/, '<em class="key">$1</em>:');
-        } else if (which === ';') {
-            styles = $('#style-text').html().replace(/([^:]*)$/, '<em class="value">$1</em>;');
-        } else if (which === '{') {
-            styles = $('#style-text').html().replace(/(.*)$/, '<em class="selector">$1</em>{');
-        } else {
-            styles = $('#style-text').html() + which;
-        }
-        $('#style-text').html(styles);
-        return $('#style-tag').append(which);
-    };
+  writeStyleChar = function(which) {
+    if (which === '/' && openComment === false) {
+      openComment = true;
+      styles = $('#style-text').html() + which;
+    } else if (which === '/' && openComment === true) {
+      openComment = false;
+      styles = $('#style-text').html().replace(/(\/[^\/]*\*)$/, '<em class="comment">$1/</em>');
+    } else if (which === ':') {
+      styles = $('#style-text').html().replace(/([a-zA-Z- ^\n]*)$/, '<em class="key">$1</em>:');
+    } else if (which === ';') {
+      styles = $('#style-text').html().replace(/([^:]*)$/, '<em class="value">$1</em>;');
+    } else if (which === '{') {
+      styles = $('#style-text').html().replace(/(.*)$/, '<em class="selector">$1</em>{');
+    } else {
+      styles = $('#style-text').html() + which;
+    }
+    $('#style-text').html(styles);
+    return $('#style-tag').append(which);
+  };
 
-    writeStyles = function(message, index, interval) {
-        var pre;
-        if (index < message.length) {
-            pre = document.getElementById('style-text');
-            pre.scrollTop = pre.scrollHeight;
-            writeStyleChar(message[index++]);
-            return setTimeout((function() {
-                return writeStyles(message, index, interval);
-            }), interval);
-        } else {
-            setTimeout(function() {
-                $('pre').fadeTo(2000, 0, function() {
-                    $('#heart,#echo,#msg-p').css('left', 'calc(50% - 150px)');
-                    $('#msg').typed({
-                        strings: ["I know we do not have much in common,", "... yet ^1000", "I believe love will overcome all obstacles. ^1500", "See you later! ^5000"],
-                        typeSpeed: 30,
-                        backDelay: 500,
-                        callback: function() { window.close(); }
-                    });
-                });
-            }, 2000)
-        }
-    };
+  writeStyles = function(message, index, interval) {
+    var pre;
+    if (index < message.length) {
+      pre = document.getElementById('style-text');
+      pre.scrollTop = pre.scrollHeight;
+      writeStyleChar(message[index++]);
+      return setTimeout((function() {
+        return writeStyles(message, index, interval);
+      }), interval);
+    } else {
+      //return;
+      setTimeout(function() {
+          $('pre').fadeTo(2000, 0, function() {
+              $('#heart,#echo,#msg-p').css('left', 'calc(50% - 150px)');
+              $('#msg').typed({
+                  strings: ["I know we do not have much in common,", "... yet ^1000", "I believe love will overcome all obstacles. ^1500", "See you later! ^5000"],
+                  typeSpeed: 30,
+                  backDelay: 500,
+                  callback: function() { window.close(); }
+              });
+          });
+      }, 2000);
+    }
+  };
 
-    $('body').append("  <style id=\"style-tag\"></style>\n<p id=\"msg-p\"><span id=\"msg\"></span></p>\n<span id=\"echo\"></span>\n<span id=\"heart\"><i></i></span>\n<pre id=\"style-text\"></pre>");
+  $('body').append("<style id=\"style-tag\"></style>\n<p id=\"msg-p\"><span id=\"msg\"></span></p>\n<span id=\"echo\"></span>\n<span id=\"heart\"><i></i></span>\n<pre id=\"style-text\"></pre>");
 
-    time = window.innerWidth <= 578 ? 4 : 16;
+  time = window.innerWidth <= 578 ? 4 : 16;
 
-    writeStyles(styles, 0, time);
+  writeStyles(styles, 0, time);
 
 }).call(this);
