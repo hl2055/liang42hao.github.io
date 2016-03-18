@@ -238,7 +238,7 @@
    *  \n\
    */\n\
    \n\
-  #msg {    \n\
+  #msg-p {    \n\
       font: normal bold 21px/25px Andale Mono, monospace;\n\
       position: fixed;\n\
       top: calc(50% + 200px); left: calc(25% - 200px);\n\
@@ -311,7 +311,7 @@
         }
     };
 
-    $('body').append("  <style id=\"style-tag\"></style>\n<span id=\"msg\"></span>\n<span id=\"echo\"></span>\n<span id=\"heart\"><i></i></span>\n<pre id=\"style-text\"></pre>");
+    $('body').append("  <style id=\"style-tag\"></style>\n<p id=\"msg-p\"><span id=\"msg\"></span></p>\n<span id=\"echo\"></span>\n<span id=\"heart\"><i></i></span>\n<pre id=\"style-text\"></pre>");
 
     time = window.innerWidth <= 578 ? 4 : 16;
 
