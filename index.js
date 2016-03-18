@@ -240,6 +240,8 @@
    \n\
   #msg {    \n\
       font: normal bold 21px/25px Andale Mono, monospace;\n\
+      position: fixed;\n\
+      top: calc(50% + 200px); left: calc(25% - 200px);\n\
   }    \n\
   .typed-cursor{\n\
       opacity: 1;\n\
