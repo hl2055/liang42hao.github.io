@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="jquery.min.js"></script>
+    <script src="typed.js"></script>
+    <script src="hz2py.js"></script>
+    <style type="text/css">
+    body {
+        color: white;
+        background: #0066cc;
+        font: normal bold 42px/50px Andale Mono, monospace;
+    }
+    
+    #msgdiv {
+        padding-left: 30%;
+        padding-top: 20%;
+    }
+    
+    .pinyin {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+    
+    .msg {
+        color: white;
+    }
+    
+    .typed-cursor {
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    </style>
+    <script charset="UTF-8">
+    function typed_cn(strs) {
+        var strs = strs || ["一", "二", "三", "四", "五", "\, ", "上山", "打老虎", '。'];
+        var strslen = strs.length;
+
+        function typepy(index) {
+            $('.msg').after('<span class=\"py' + index + ' pinyin\"></span>');
+            var py = strs[index].hz2py();
+            $('.py' + index).typed({
+                strings: [py],
+                typeSpeed: 125,
+                typeDelay: 125,
+                backSpeed: 1,
+                backDelay: 0,
+                callback: function() {
+                    addWord(index);
+                }
+            });
+        }
+
+        function addWord(index) {
+            $('.py' + index).remove();
+            $('.msg').html($('.msg').html() + strs[index]);
+            if (index == strslen - 1) {
+                return;
+            } else {
+                $('.typed-cursor').remove();
+                return typepy(index + 1);
+            }
+        }
+        typepy(0);
+    }
+    $(function() {
+        typed_cn();
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id='msgdiv'><span class="msg"></span></div>
+</body>
+
+</html>
